@@ -194,7 +194,7 @@
                     <i class="fa fa-edit"></i> 
                     
                     
-                        1301
+                        1306
                     
                     字
                 </li>
@@ -208,12 +208,15 @@
             
             <hr />
             <p><img src="https://api.ixiaowai.cn/api/api.php" alt="cover"></p>
-<h1 id="什么是SElinux？"><a href="#什么是SElinux？" class="headerlink" title="什么是SElinux？"></a>什么是SElinux？</h1><p>安全增强式Linux（SELinux，Security-Enhanced Linux）是一个Linux内核的安全模块，其提供了访问控制安全策略机制，包括了强制访问控制（Mandatory Access Control，MAC）。<br>SELinux是一组内核修改和用户空间工具，已经被添加到各种Linux发行版中。其软件架构力图将安全决策的执行与安全策略分离，并简化涉及执行安全策略的软件的数量。SELinux的核心概念可以追溯回美国国家安全局（NSA）的一些早期项目。<br><span id="more"></span><br>
-    <div id="aplayer-NSqfKoAC" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="1311090112" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#555"></div></p>
+<h1 id="什么是SElinux？"><a href="#什么是SElinux？" class="headerlink" title="什么是SElinux？"></a>什么是SElinux？</h1><p>安全增强式Linux（SELinux，Security-Enhanced Linux）是一个Linux内核的安全模块，其提供了访问控制安全策略机制，包括了强制访问控制（Mandatory Access Control，MAC）。<br>SELinux是一组内核修改和用户空间工具，已经被添加到各种Linux发行版中。其软件架构力图将安全决策的执行与安全策略分离，并简化涉及执行安全策略的软件的数量。SELinux的核心概念可以追溯回美国国家安全局（NSA）的一些早期项目。</p>
+<span id="more"></span>
+
+    <div id="aplayer-LecIrZDC" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="1311090112" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#555"></div>
 <h1 id="检查SElinux状况"><a href="#检查SElinux状况" class="headerlink" title="检查SElinux状况"></a>检查SElinux状况</h1><p><code>sestatus</code></p>
 <h1 id="开启SElinux"><a href="#开启SElinux" class="headerlink" title="开启SElinux"></a>开启SElinux</h1><div class="alert alert-info"><p>你需要Root才能编辑状况</p>
 </div>
-<p><code>vim /etc/selinux/config</code><br><pre class="language-none"><code class="language-none"># This file controls the state of SELinux on the system.
+<p><code>vim /etc/selinux/config</code></p>
+<pre class="language-none"><code class="language-none"># This file controls the state of SELinux on the system.
 # SELINUX&#x3D; can take one of these three values:
 #     enforcing - SELinux security policy is enforced.
 #     permissive - SELinux prints warnings instead of enforcing.
@@ -229,8 +232,11 @@ SELINUX&#x3D;permissive
 #     targeted - Targeted processes are protected,
 #     minimum - Modification of targeted policy. Only selected processes are protected.
 #     mls - Multi Level Security protection.
-SELINUXTYPE&#x3D;targeted</code></pre><br><code>reboot</code><br><div class="alert alert-success"><p>成功啦o(<em>￣▽￣</em>)ブ</p>
-</div><br>登陆后检查状态：<code>sestatus</code></p>
+SELINUXTYPE&#x3D;targeted</code></pre>
+<p><code>reboot</code></p>
+<div class="alert alert-success"><p>成功啦o(<em>￣▽￣</em>)ブ</p>
+</div>
+<p>登陆后检查状态：<code>sestatus</code></p>
 <h1 id="如果系统异常"><a href="#如果系统异常" class="headerlink" title="如果系统异常"></a>如果系统异常</h1><div class="alert alert-danger"><p>有危险Σ(っ °Д °;)っ</p>
 </div>
 <p>比如登陆什么的，懂我意思吧。</p>
@@ -242,8 +248,7 @@ SELINUXTYPE&#x3D;targeted</code></pre><br><code>reboot</code><br><div class="ale
 <li>编辑<code>vim /etc/selinux/config</code></li>
 <li>替换<code>SELINUX=enforcing</code>或者其他为<code>SELINUX=disabled</code></li>
 <li>退出，重启<div class="alert alert-success"><p>成功啦o(<em>￣▽￣</em>)ブ</p>
-</div>
-</li>
+</div></li>
 </ul>
 
         </div>

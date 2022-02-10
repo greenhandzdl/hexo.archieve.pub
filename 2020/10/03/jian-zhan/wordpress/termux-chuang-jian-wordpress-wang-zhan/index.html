@@ -197,7 +197,7 @@
                     <i class="fa fa-edit"></i> 
                     
                     
-                        ~1.76K
+                        ~1.77K
                     
                     字
                 </li>
@@ -210,8 +210,10 @@
             </div>
             
             <hr />
-            <p><img src="https://acg.yanwz.cn/wallpaper/api.php" alt="cover"><br>我说我不仅会建静态，动态我也会建，你们信吗？<br><span id="more"></span><br>
-    <div id="aplayer-HNYYRZuP" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="531786301" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#555"></div></p>
+            <p><img src="https://acg.yanwz.cn/wallpaper/api.php" alt="cover"><br>我说我不仅会建静态，动态我也会建，你们信吗？</p>
+<span id="more"></span>
+
+    <div id="aplayer-vERgoZzl" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="531786301" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#555"></div>
 <h1 id="工具-google-com-github-com"><a href="#工具-google-com-github-com" class="headerlink" title="工具: google.com github.com"></a>工具: google.com github.com</h1><p>（没错，我就是嘲笑你们不会使用工具，想打我吧，你们就想吧）</p>
 <h2 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a>nginx</h2><p><code>pkg install nginx</code></p>
 <h3 id="修改nginx配置文件"><a href="#修改nginx配置文件" class="headerlink" title="修改nginx配置文件"></a>修改nginx配置文件</h3><p>完成上步，你访问127.0.0.1:8080仅仅会得到默认页。<br>如果你想php解析，如果你想更换网站根目录，请往下看。<br><code>vim $PREFIX/etc/nginx/nginx.conf</code></p>
@@ -219,8 +221,11 @@
 <h4 id="取消-location-php-这些注释（监听php）"><a href="#取消-location-php-这些注释（监听php）" class="headerlink" title="取消 location ~ .php$ 这些注释（监听php）"></a>取消 location ~ .php$ 这些注释（监听php）</h4><p>65~71行，退掉前面的#符</p>
 <h4 id="换网站根目录地址"><a href="#换网站根目录地址" class="headerlink" title="换网站根目录地址"></a>换网站根目录地址</h4><p>默认地址在<code>/data/data/com.termux/files/usr/share/nginx/html</code>，所以更换也只需要替换文件所有出现这个的就可以了，当然这里还有个坑。<br>在69行位置,需要改成<code>fastcgi_param  SCRIPT_FILENAME  你修改后网站目录地址$fastcgi_script_name;</code></p>
 <h2 id="php-fpm"><a href="#php-fpm" class="headerlink" title="php-fpm"></a>php-fpm</h2><p>由于nginx无法直接解析，所以需要<code>pkg install php-fpm</code><br>不仅如此，还需要<code>vim $PREFIX/etc/php-fpm.d/www.conf</code><br>将36行<code>listen = /data/data/com.termux/files/usr/var/run/php-fpm.sock</code>替换成<code>listen = 127.0.0.1:9000</code></p>
-<h2 id="mariadb"><a href="#mariadb" class="headerlink" title="mariadb"></a>mariadb</h2><p>装数据库中…<code>pkg install mariadb</code><br><pre class="language-none"><code class="language-none"># 登录 termux用户 数据库
-mysql -u $(whoami)</code></pre><br>如果出现<code>ERROR 2002 (HY000): Can&#39;t connect to local MySQL server through socket &#39;/data/data/com.termux/files/usr/tmp/mysqld.sock&#39; (111)</code>类似错误，请执行<code>mysqld_safe</code>，然后通过侧边栏的new session再开一个终端，重试<code>mysql -u $(whoami)</code><br>如果还是不行，你还是谷歌吧。<br><pre class="language-none"><code class="language-none"># 修改 root 密码的 SQL语句
+<h2 id="mariadb"><a href="#mariadb" class="headerlink" title="mariadb"></a>mariadb</h2><p>装数据库中…<code>pkg install mariadb</code></p>
+<pre class="language-none"><code class="language-none"># 登录 termux用户 数据库
+mysql -u $(whoami)</code></pre>
+<p>如果出现<code>ERROR 2002 (HY000): Can&#39;t connect to local MySQL server through socket &#39;/data/data/com.termux/files/usr/tmp/mysqld.sock&#39; (111)</code>类似错误，请执行<code>mysqld_safe</code>，然后通过侧边栏的new session再开一个终端，重试<code>mysql -u $(whoami)</code><br>如果还是不行，你还是谷歌吧。</p>
+<pre class="language-none"><code class="language-none"># 修改 root 密码的 SQL语句
 use mysql;
 set password for &#39;root&#39;@&#39;localhost&#39; &#x3D; password(&#39;你设置的密码&#39;);
 # 刷新权限 并退出
@@ -237,15 +242,15 @@ use wordpress;
 # 设置中文编码
 set names utf8; 
 # 然后跟你的数据库say bye
-quit;</code></pre></p>
+quit;</code></pre>
 <h2 id="wordpress"><a href="#wordpress" class="headerlink" title="wordpress"></a>wordpress</h2><pre class="language-none"><code class="language-none">wget https:&#x2F;&#x2F;wordpress.org&#x2F;latest.zip
 unzip latest.zip
 cp wordpress&#x2F;. -r 你的网站目录地址</code></pre>
 <h2 id="欣赏你的作品"><a href="#欣赏你的作品" class="headerlink" title="欣赏你的作品"></a>欣赏你的作品</h2><p><code>nginx</code><br>如果开启了，你就<code>nginx -s reload</code>就行了。</p>
 <p><code>php-fpm</code></p>
 <p>如果提示注意不是root运行，忽略即可。<br>如果提醒端口占有，请关闭termux重开。如果是其他原因，如自开服务等，建议自行关闭，要查询什么程序占用，请执行<code>nmap 127.0.0.1</code></p>
-<p><code>mysqld_safe</code><br>不要重复执行命令！！！<br>访问127.0.0.1:8080，完成最后的过程—配置帐号密码啥的。</p>
-<h2 id="最后，看看我的成果。"><a href="#最后，看看我的成果。" class="headerlink" title="最后，看看我的成果。"></a>最后，看看我的成果。</h2><p><img src="/2020/10/03/jian-zhan/wordpress/termux-chuang-jian-wordpress-wang-zhan/示例图.png" alt="我的成果"><br>如果还是没有看太明白，请在本文链接后面加上文件名字（配置文件），你将有概率得到作者的配置文件—注意：作者的网站根目录在~/www。</p>
+<p><code>mysqld_safe</code><br>不要重复执行命令！！！<br>访问127.0.0.1:8080，完成最后的过程–配置帐号密码啥的。</p>
+<h2 id="最后，看看我的成果。"><a href="#最后，看看我的成果。" class="headerlink" title="最后，看看我的成果。"></a>最后，看看我的成果。</h2><p><img src="/2020/10/03/jian-zhan/wordpress/termux-chuang-jian-wordpress-wang-zhan/%E7%A4%BA%E4%BE%8B%E5%9B%BE.png" alt="我的成果"><br>如果还是没有看太明白，请在本文链接后面加上文件名字（配置文件），你将有概率得到作者的配置文件–注意：作者的网站根目录在~&#x2F;www。</p>
 <p>我相信其他动态网页部署也差不多吧，如果还想搞外网，映射8080端口或者你改的端口就可以了。</p>
 
         </div>
