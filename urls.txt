@@ -1,0 +1,14 @@
+https://greenhandzdl.github.io/2022/02/10/fan-bian-yi/dui-unity-de-windows-xiang-mu-jin-xing-dll-fan-bian-yi-xiu-gai/
+https://greenhandzdl.github.io/2020/12/12/linux/selinux/selinux/
+https://greenhandzdl.github.io/2020/11/25/android/termux/ru-he-zai-termux-bu-zhi-chi-de-ban-ben-an-zhuang-gh/
+https://greenhandzdl.github.io/2020/11/19/nodejs/plugins/npm-gao-ji-yong-fa/
+https://greenhandzdl.github.io/2020/11/14/android/ru-he-root-ni-de-shou-ji/
+https://greenhandzdl.github.io/2020/11/09/android/termux/ru-he-zai-shou-ji-kuai-su-da-jian-linux/
+https://greenhandzdl.github.io/2020/10/19/linux/shi-yong-gong-ju/linux-shi-yong-gong-ju/
+https://greenhandzdl.github.io/2020/10/03/jian-zhan/wordpress/termux-chuang-jian-wordpress-wang-zhan/
+https://greenhandzdl.github.io/2020/10/01/sui-bi-ji/sui-bi-ji/
+https://greenhandzdl.github.io/2020/10/01/jian-zhan/hexo/plugins/hexo-git-backup-de-bao-cuo/
+https://greenhandzdl.github.io/2020/09/21/jian-zhan/hexo/termux-jian-yi-jian-zhan/
+https://greenhandzdl.github.io/2020/09/08/linux/wine/ab-wine/
+https://greenhandzdl.github.io/2020/09/07/you-xi/minecraft/min-inst/
+https://greenhandzdl.github.io/2020/09/06/you-xi/plague-inc/pl-w-1/
