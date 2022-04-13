@@ -45,6 +45,10 @@
   <!-- 样式表文件 -->
   <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" type="text/css" media="all">
   
+    <link rel="stylesheet" id="darkmode-css" href="/css/kr-color-dark.min.css" type="text/css" media="(prefers-color-scheme: dark)">
+    <script src="/js/kr-dark.min.js"></script>
+  
+  
   
     <link rel="stylesheet" id="prismjs-css" href="/css/prismjs.min.css" type="text/css" media="all">
   
@@ -52,13 +56,11 @@
   <link rel="stylesheet" id="nprogress-css" href="https://unpkg.com/nprogress@0.2.0/nprogress.css" type="text/css" media="all">
   
   
+  
     <link rel="stylesheet" href="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.css">
   
   
     <link rel="stylesheet" href="https://unpkg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
-  
-  
-    <link rel="stylesheet" id="darkmode-css" href="/css/kr-dark.min.css" type="text/css" media="all">
   
   <!-- 不得不预先加载的一些JS文件 -->
   <script src="https://unpkg.com/jquery@3.6.0/dist/jquery.min.js"></script>
@@ -122,15 +124,7 @@
                                                     
                                                 
                                                     
-                                                        <li><a target="_blank" rel="noopener" href="https://github.com/greenhandzdl/greenhandzdl.github.io">仓库地址</a></li>
-                                                    
-                                                
-                                                    
                                                         <li><a href="/logs">更新修复日志</a></li>
-                                                    
-                                                
-                                                    
-                                                        <li><a target="_blank" rel="noopener" href="https://github.com/greenhandzdl/others">杂 项目地址</a></li>
                                                     
                                                 
                                                     
@@ -185,6 +179,7 @@
         
 
             <article>
+    
     <div class="kratos-hentry kratos-post-inner clearfix">
         <header class="kratos-entry-header">
             
@@ -198,7 +193,7 @@
                     <i class="fa fa-edit"></i> 
                     
                     
-                        1306
+                        1301
                     
                     字
                 </li>
@@ -213,15 +208,12 @@
             
             <hr />
             <p><img src="https://api.ixiaowai.cn/api/api.php" alt="cover"></p>
-<h1 id="什么是SElinux？"><a href="#什么是SElinux？" class="headerlink" title="什么是SElinux？"></a>什么是SElinux？</h1><p>安全增强式Linux（SELinux，Security-Enhanced Linux）是一个Linux内核的安全模块，其提供了访问控制安全策略机制，包括了强制访问控制（Mandatory Access Control，MAC）。<br>SELinux是一组内核修改和用户空间工具，已经被添加到各种Linux发行版中。其软件架构力图将安全决策的执行与安全策略分离，并简化涉及执行安全策略的软件的数量。SELinux的核心概念可以追溯回美国国家安全局（NSA）的一些早期项目。</p>
-<span id="more"></span>
-
-    <div id="aplayer-YvsBXefn" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="1311090112" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#555"></div>
+<h1 id="什么是SElinux？"><a href="#什么是SElinux？" class="headerlink" title="什么是SElinux？"></a>什么是SElinux？</h1><p>安全增强式Linux（SELinux，Security-Enhanced Linux）是一个Linux内核的安全模块，其提供了访问控制安全策略机制，包括了强制访问控制（Mandatory Access Control，MAC）。<br>SELinux是一组内核修改和用户空间工具，已经被添加到各种Linux发行版中。其软件架构力图将安全决策的执行与安全策略分离，并简化涉及执行安全策略的软件的数量。SELinux的核心概念可以追溯回美国国家安全局（NSA）的一些早期项目。<br><span id="more"></span><br>
+    <div id="aplayer-TymlQbwg" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="1311090112" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#555"></div></p>
 <h1 id="检查SElinux状况"><a href="#检查SElinux状况" class="headerlink" title="检查SElinux状况"></a>检查SElinux状况</h1><p><code>sestatus</code></p>
 <h1 id="开启SElinux"><a href="#开启SElinux" class="headerlink" title="开启SElinux"></a>开启SElinux</h1><div class="alert alert-info"><div class="icon"><i class="fa fa-info"></i></div><div class="text"><p>你需要Root才能编辑状况</p>
 </div></div>
-<p><code>vim /etc/selinux/config</code></p>
-<pre class="language-none"><code class="language-none"># This file controls the state of SELinux on the system.
+<p><code>vim /etc/selinux/config</code><br><pre class="language-none"><code class="language-none"># This file controls the state of SELinux on the system.
 # SELINUX&#x3D; can take one of these three values:
 #     enforcing - SELinux security policy is enforced.
 #     permissive - SELinux prints warnings instead of enforcing.
@@ -237,11 +229,8 @@ SELINUX&#x3D;permissive
 #     targeted - Targeted processes are protected,
 #     minimum - Modification of targeted policy. Only selected processes are protected.
 #     mls - Multi Level Security protection.
-SELINUXTYPE&#x3D;targeted</code></pre>
-<p><code>reboot</code></p>
-<div class="alert alert-success"><div class="icon"><i class="fa fa-check"></i></div><div class="text"><p>成功啦o(<em>￣▽￣</em>)ブ</p>
-</div></div>
-<p>登陆后检查状态：<code>sestatus</code></p>
+SELINUXTYPE&#x3D;targeted</code></pre><br><code>reboot</code><br><div class="alert alert-success"><div class="icon"><i class="fa fa-check"></i></div><div class="text"><p>成功啦o(<em>￣▽￣</em>)ブ</p>
+</div></div><br>登陆后检查状态：<code>sestatus</code></p>
 <h1 id="如果系统异常"><a href="#如果系统异常" class="headerlink" title="如果系统异常"></a>如果系统异常</h1><div class="alert alert-danger"><div class="icon"><i class="fa fa-exclamation"></i></div><div class="text"><p>有危险Σ(っ °Д °;)っ</p>
 </div></div>
 <p>比如登陆什么的，懂我意思吧。</p>
@@ -253,7 +242,8 @@ SELINUXTYPE&#x3D;targeted</code></pre>
 <li>编辑<code>vim /etc/selinux/config</code></li>
 <li>替换<code>SELINUX=enforcing</code>或者其他为<code>SELINUX=disabled</code></li>
 <li>退出，重启<div class="alert alert-success"><div class="icon"><i class="fa fa-check"></i></div><div class="text"><p>成功啦o(<em>￣▽￣</em>)ブ</p>
-</div></div></li>
+</div></div>
+</li>
 </ul>
 
         </div>
@@ -431,7 +421,7 @@ SELINUXTYPE&#x3D;targeted</code></pre>
                 标签
             </span>
             <span class="count">
-                51
+                52
             </span>
         </a>
     </div>
@@ -449,7 +439,7 @@ SELINUXTYPE&#x3D;targeted</code></pre>
   <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
     <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
       <div class="tag-clouds">
-        <a href="/tags/Android/" style="font-size: 0.7em;">Android</a> <a href="/tags/Android-low-aarch64/" style="font-size: 0.6em;">Android(low,aarch64)</a> <a href="/tags/CS/" style="font-size: 0.6em;">CS</a> <a href="/tags/CS1061/" style="font-size: 0.6em;">CS1061</a> <a href="/tags/CSPROJ/" style="font-size: 0.6em;">CSPROJ</a> <a href="/tags/Centos8-Stream/" style="font-size: 0.6em;">Centos8(Stream)</a> <a href="/tags/DLL/" style="font-size: 0.6em;">DLL</a> <a href="/tags/Hamlet/" style="font-size: 0.6em;">Hamlet</a> <a href="/tags/Hexo/" style="font-size: 0.7em;">Hexo</a> <a href="/tags/ILSpy/" style="font-size: 0.6em;">ILSpy</a> <a href="/tags/Linux/" style="font-size: 0.8em;">Linux</a> <a href="/tags/Minecraft/" style="font-size: 0.6em;">Minecraft</a> <a href="/tags/Oracle-Java/" style="font-size: 0.6em;">Oracle Java</a> <a href="/tags/PC/" style="font-size: 0.6em;">PC</a> <a href="/tags/Reflexil/" style="font-size: 0.6em;">Reflexil</a> <a href="/tags/Root/" style="font-size: 0.6em;">Root</a> <a href="/tags/Terminal/" style="font-size: 0.6em;">Terminal</a> <a href="/tags/Termux/" style="font-size: 0.8em;">Termux</a>
+        <a href="/tags/Android/" style="font-size: 0.7em;">Android</a> <a href="/tags/Android-low-aarch64/" style="font-size: 0.6em;">Android(low,aarch64)</a> <a href="/tags/CS/" style="font-size: 0.6em;">CS</a> <a href="/tags/CS1061/" style="font-size: 0.6em;">CS1061</a> <a href="/tags/CSPROJ/" style="font-size: 0.6em;">CSPROJ</a> <a href="/tags/Centos8-Stream/" style="font-size: 0.6em;">Centos8(Stream)</a> <a href="/tags/DLL/" style="font-size: 0.6em;">DLL</a> <a href="/tags/Hamlet/" style="font-size: 0.6em;">Hamlet</a> <a href="/tags/Hexo/" style="font-size: 0.7em;">Hexo</a> <a href="/tags/ILSpy/" style="font-size: 0.6em;">ILSpy</a> <a href="/tags/Linux/" style="font-size: 0.8em;">Linux</a> <a href="/tags/Minecraft/" style="font-size: 0.6em;">Minecraft</a> <a href="/tags/Oracle-Java/" style="font-size: 0.6em;">Oracle Java</a> <a href="/tags/PC/" style="font-size: 0.6em;">PC</a> <a href="/tags/Private/" style="font-size: 0.6em;">Private</a> <a href="/tags/Reflexil/" style="font-size: 0.6em;">Reflexil</a> <a href="/tags/Root/" style="font-size: 0.6em;">Root</a> <a href="/tags/Terminal/" style="font-size: 0.6em;">Terminal</a>
       </div>
   </aside>
 
@@ -629,9 +619,6 @@ SELINUXTYPE&#x3D;targeted</code></pre>
 <script defer src="https://unpkg.com/clipboard@2.0.6/dist/clipboard.min.js"></script>
 <script defer src="/js/kratosr.min.js"></script>
 <script defer src="/js/pjax.min.js"></script>
-
-
-    <script defer src="/js/kr-dark.min.js"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics --> <script async src="https://www.googletagmanager.com/gtag/js?id=UA-177307259-1"></script> <script> window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag("js", new Date()); gtag("config", "UA-177307259-1"); </script> 
 

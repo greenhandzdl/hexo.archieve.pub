@@ -53,6 +53,10 @@
   <!-- 样式表文件 -->
   <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" type="text/css" media="all">
   
+    <link rel="stylesheet" id="darkmode-css" href="/css/kr-color-dark.min.css" type="text/css" media="(prefers-color-scheme: dark)">
+    <script src="/js/kr-dark.min.js"></script>
+  
+  
   
     <link rel="stylesheet" id="prismjs-css" href="/css/prismjs.min.css" type="text/css" media="all">
   
@@ -60,13 +64,11 @@
   <link rel="stylesheet" id="nprogress-css" href="https://unpkg.com/nprogress@0.2.0/nprogress.css" type="text/css" media="all">
   
   
+  
     <link rel="stylesheet" href="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.css">
   
   
     <link rel="stylesheet" href="https://unpkg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
-  
-  
-    <link rel="stylesheet" id="darkmode-css" href="/css/kr-dark.min.css" type="text/css" media="all">
   
   <!-- 不得不预先加载的一些JS文件 -->
   <script src="https://unpkg.com/jquery@3.6.0/dist/jquery.min.js"></script>
@@ -127,15 +129,7 @@
                                                     
                                                 
                                                     
-                                                        <li><a target="_blank" rel="noopener" href="https://github.com/greenhandzdl/greenhandzdl.github.io">仓库地址</a></li>
-                                                    
-                                                
-                                                    
                                                         <li><a href="/logs">更新修复日志</a></li>
-                                                    
-                                                
-                                                    
-                                                        <li><a target="_blank" rel="noopener" href="https://github.com/greenhandzdl/others">杂 项目地址</a></li>
                                                     
                                                 
                                                     
@@ -190,6 +184,7 @@
         
 
             <article>
+    
     <div class="kratos-hentry kratos-post-inner clearfix">
         <header class="kratos-entry-header">
             
@@ -203,7 +198,7 @@
                     <i class="fa fa-edit"></i> 
                     
                     
-                        780
+                        787
                     
                     字
                 </li>
@@ -218,18 +213,20 @@
             
             <hr />
             <h1 id="注意：学习目的，切莫以身试法"><a href="#注意：学习目的，切莫以身试法" class="headerlink" title="注意：学习目的，切莫以身试法"></a>注意：学习目的，切莫以身试法</h1><pre><code>&gt; 超低的爆率，不友好的保底？于是我就开始尝试自己动手去优化
-</code></pre>
-<span id="more"></span>
+</code></pre><span id="more"></span>
 <h2 id="工具准备："><a href="#工具准备：" class="headerlink" title="工具准备："></a>工具准备：</h2><ul>
 <li>反编译工具：ILSpy.msi（不推荐：ILSpy的vs插件版本）</li>
 <li>编译工具：Visual Studio（不推荐：reflexil.for.ILSpy.AIO.bin）</li>
-<li>需要被反编译的Unity项目（不限）<h2 id="反编译过程"><a href="#反编译过程" class="headerlink" title="反编译过程:"></a>反编译过程:</h2></li>
+<li>需要被反编译的Unity项目（不限）<h2 id="反编译过程"><a href="#反编译过程" class="headerlink" title="反编译过程:"></a>反编译过程:</h2>1.反编译查看部分</li>
 </ul>
-<p>1.反编译查看部分</p>
 <ul>
-<li>进入该项目目录（找源码文件）<br>  <img src="/2022/02/10/fan-bian-yi/dui-unity-de-windows-xiang-mu-jin-xing-dll-fan-bian-yi-xiu-gai/%E9%A1%B9%E7%9B%AE%E5%85%A8%E6%99%AF.png" alt="该个项目全景"><br>  例如本项目地址在<code>\*_Data\Managed</code>，而我们要找的便是<code>Assembly-CSharp.dll</code>了，快使用ILSpy打开它吧 </li>
-<li>ILSpy界面讲解<br>  <img src="/2022/02/10/fan-bian-yi/dui-unity-de-windows-xiang-mu-jin-xing-dll-fan-bian-yi-xiu-gai/ILSpy%E7%95%8C%E9%9D%A2%E8%AE%B2%E8%A7%A3.jpg" alt="折腾了一两个小时大致摸索稍微清楚的UI界面"><br>界面简洁，但功能强大。<br>  &gt; Tips:反编译前，我们首先要确定目标（首先尝试输入你所看到的，如果没找到再翻译下，如果还是没找到就模糊搜索下，还是没找到就自己慢慢想吧，因为大概率字符串被加密了） </li>
-<li>ILSpy代码导出<blockquote>
+<li>进入该项目目录（找源码文件）<br>  <img src="/2022/02/10/fan-bian-yi/dui-unity-de-windows-xiang-mu-jin-xing-dll-fan-bian-yi-xiu-gai/项目全景.png" alt="该个项目全景"><pre><code>  例如本项目地址在`\*_Data\Managed`，而我们要找的便是`Assembly-CSharp.dll`了，快使用ILSpy打开它吧 
+</code></pre></li>
+<li>ILSpy界面讲解<br>  <img src="/2022/02/10/fan-bian-yi/dui-unity-de-windows-xiang-mu-jin-xing-dll-fan-bian-yi-xiu-gai/ILSpy界面讲解.jpg" alt="折腾了一两个小时大致摸索稍微清楚的UI界面"><pre><code>界面简洁，但功能强大。
+  &gt; Tips:反编译前，我们首先要确定目标（首先尝试输入你所看到的，如果没找到再翻译下，如果还是没找到就模糊搜索下，还是没找到就自己慢慢想吧，因为大概率字符串被加密了） 
+</code></pre></li>
+<li><p>ILSpy代码导出</p>
+<blockquote>
 <p>Tips:记得选择相关的反编译语言&amp;版本</p>
 </blockquote>
 <p>  先<code>Alt F</code>（菜单）<code>Ctrl s</code>（保存代码），新建文件夹接着保存为csproj（VS打开方便），然后急着不要关ILSpy（待会还有用）</p>
@@ -237,7 +234,8 @@
 </ul>
 <p>2.编译DLL过程</p>
 <ul>
-<li>点击生成的csproj选择VS打开（这里就可以修改cs文件了）<br>  <img src="/2022/02/10/fan-bian-yi/dui-unity-de-windows-xiang-mu-jin-xing-dll-fan-bian-yi-xiu-gai/VS%E7%95%8C%E9%9D%A2%E9%83%A8%E5%88%86.jpg" alt="为什么会出现编译错误？"><br>  相信导出来心急的你已经尝试着直接编译了吧，是不是报错且大多数都是CS1061，必应了吗？<br>  其实，就是库不太全的缘故。<blockquote>
+<li><p>点击生成的csproj选择VS打开（这里就可以修改cs文件了）<br>  <img src="/2022/02/10/fan-bian-yi/dui-unity-de-windows-xiang-mu-jin-xing-dll-fan-bian-yi-xiu-gai/VS界面部分.jpg" alt="为什么会出现编译错误？"><br>  相信导出来心急的你已经尝试着直接编译了吧，是不是报错且大多数都是CS1061，必应了吗？<br>  其实，就是库不太全的缘故。</p>
+<blockquote>
 <p>方法：右键依赖项&gt;添加项目引用&gt;浏览，把<code>\*_Data\Managed</code>目录下除你要修改的dll全部加上。</p>
 </blockquote>
 <p>  然后等导入飞一下，导入完了接着release生成，完事（再生成建议删除<code>bin\</code>目录）。</p>
@@ -426,7 +424,7 @@
                 标签
             </span>
             <span class="count">
-                51
+                52
             </span>
         </a>
     </div>
@@ -444,7 +442,7 @@
   <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
     <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
       <div class="tag-clouds">
-        <a href="/tags/Android/" style="font-size: 0.7em;">Android</a> <a href="/tags/Android-low-aarch64/" style="font-size: 0.6em;">Android(low,aarch64)</a> <a href="/tags/CS/" style="font-size: 0.6em;">CS</a> <a href="/tags/CS1061/" style="font-size: 0.6em;">CS1061</a> <a href="/tags/CSPROJ/" style="font-size: 0.6em;">CSPROJ</a> <a href="/tags/Centos8-Stream/" style="font-size: 0.6em;">Centos8(Stream)</a> <a href="/tags/DLL/" style="font-size: 0.6em;">DLL</a> <a href="/tags/Hamlet/" style="font-size: 0.6em;">Hamlet</a> <a href="/tags/Hexo/" style="font-size: 0.7em;">Hexo</a> <a href="/tags/ILSpy/" style="font-size: 0.6em;">ILSpy</a> <a href="/tags/Linux/" style="font-size: 0.8em;">Linux</a> <a href="/tags/Minecraft/" style="font-size: 0.6em;">Minecraft</a> <a href="/tags/Oracle-Java/" style="font-size: 0.6em;">Oracle Java</a> <a href="/tags/PC/" style="font-size: 0.6em;">PC</a> <a href="/tags/Reflexil/" style="font-size: 0.6em;">Reflexil</a> <a href="/tags/Root/" style="font-size: 0.6em;">Root</a> <a href="/tags/Terminal/" style="font-size: 0.6em;">Terminal</a> <a href="/tags/Termux/" style="font-size: 0.8em;">Termux</a>
+        <a href="/tags/Android/" style="font-size: 0.7em;">Android</a> <a href="/tags/Android-low-aarch64/" style="font-size: 0.6em;">Android(low,aarch64)</a> <a href="/tags/CS/" style="font-size: 0.6em;">CS</a> <a href="/tags/CS1061/" style="font-size: 0.6em;">CS1061</a> <a href="/tags/CSPROJ/" style="font-size: 0.6em;">CSPROJ</a> <a href="/tags/Centos8-Stream/" style="font-size: 0.6em;">Centos8(Stream)</a> <a href="/tags/DLL/" style="font-size: 0.6em;">DLL</a> <a href="/tags/Hamlet/" style="font-size: 0.6em;">Hamlet</a> <a href="/tags/Hexo/" style="font-size: 0.7em;">Hexo</a> <a href="/tags/ILSpy/" style="font-size: 0.6em;">ILSpy</a> <a href="/tags/Linux/" style="font-size: 0.8em;">Linux</a> <a href="/tags/Minecraft/" style="font-size: 0.6em;">Minecraft</a> <a href="/tags/Oracle-Java/" style="font-size: 0.6em;">Oracle Java</a> <a href="/tags/PC/" style="font-size: 0.6em;">PC</a> <a href="/tags/Private/" style="font-size: 0.6em;">Private</a> <a href="/tags/Reflexil/" style="font-size: 0.6em;">Reflexil</a> <a href="/tags/Root/" style="font-size: 0.6em;">Root</a> <a href="/tags/Terminal/" style="font-size: 0.6em;">Terminal</a>
       </div>
   </aside>
 
@@ -624,9 +622,6 @@
 <script defer src="https://unpkg.com/clipboard@2.0.6/dist/clipboard.min.js"></script>
 <script defer src="/js/kratosr.min.js"></script>
 <script defer src="/js/pjax.min.js"></script>
-
-
-    <script defer src="/js/kr-dark.min.js"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics --> <script async src="https://www.googletagmanager.com/gtag/js?id=UA-177307259-1"></script> <script> window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag("js", new Date()); gtag("config", "UA-177307259-1"); </script> 
 

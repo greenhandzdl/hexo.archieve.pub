@@ -46,6 +46,10 @@
   <!-- 样式表文件 -->
   <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" type="text/css" media="all">
   
+    <link rel="stylesheet" id="darkmode-css" href="/css/kr-color-dark.min.css" type="text/css" media="(prefers-color-scheme: dark)">
+    <script src="/js/kr-dark.min.js"></script>
+  
+  
   
     <link rel="stylesheet" id="prismjs-css" href="/css/prismjs.min.css" type="text/css" media="all">
   
@@ -53,13 +57,11 @@
   <link rel="stylesheet" id="nprogress-css" href="https://unpkg.com/nprogress@0.2.0/nprogress.css" type="text/css" media="all">
   
   
+  
     <link rel="stylesheet" href="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.css">
   
   
     <link rel="stylesheet" href="https://unpkg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
-  
-  
-    <link rel="stylesheet" id="darkmode-css" href="/css/kr-dark.min.css" type="text/css" media="all">
   
   <!-- 不得不预先加载的一些JS文件 -->
   <script src="https://unpkg.com/jquery@3.6.0/dist/jquery.min.js"></script>
@@ -123,15 +125,7 @@
                                                     
                                                 
                                                     
-                                                        <li><a target="_blank" rel="noopener" href="https://github.com/greenhandzdl/greenhandzdl.github.io">仓库地址</a></li>
-                                                    
-                                                
-                                                    
                                                         <li><a href="/logs">更新修复日志</a></li>
-                                                    
-                                                
-                                                    
-                                                        <li><a target="_blank" rel="noopener" href="https://github.com/greenhandzdl/others">杂 项目地址</a></li>
                                                     
                                                 
                                                     
@@ -186,6 +180,7 @@
         
 
             <article>
+    
     <div class="kratos-hentry kratos-post-inner clearfix">
         <header class="kratos-entry-header">
             
@@ -199,7 +194,7 @@
                     <i class="fa fa-edit"></i> 
                     
                     
-                        1076
+                        1064
                     
                     字
                 </li>
@@ -214,18 +209,17 @@
             
             <hr />
             <p><img src="https://api.ixiaowai.cn/api/api.php" alt="cover"></p>
-<h1 id="hexo-git-backup是什么"><a href="#hexo-git-backup是什么" class="headerlink" title="hexo-git-backup是什么?"></a>hexo-git-backup是什么?</h1><p>hexo备份(<a target="_blank" rel="noopener" href="https://github.com/coneycode/hexo-git-backup">https://github.com/coneycode/hexo-git-backup</a>)<br>那么,当你按着官方教材走是不是很高兴?</p>
-<span id="more"></span>
-
-    <div id="aplayer-TOOvVRRA" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="522041157" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#555"></div>
+<h1 id="hexo-git-backup是什么"><a href="#hexo-git-backup是什么" class="headerlink" title="hexo-git-backup是什么?"></a>hexo-git-backup是什么?</h1><p>hexo备份(<a target="_blank" rel="noopener" href="https://github.com/coneycode/hexo-git-backup">https://github.com/coneycode/hexo-git-backup</a>)<br>那么,当你按着官方教材走是不是很高兴?<br><span id="more"></span><br>
+    <div id="aplayer-XSozFPDZ" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="522041157" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#555"></div></p>
 <h2 id="Q1-Please-make-sure-you-have-the-correct-access-rights-and-the-repository-exists"><a href="#Q1-Please-make-sure-you-have-the-correct-access-rights-and-the-repository-exists" class="headerlink" title="Q1:Please make sure you have the correct access rights and the repository exists."></a>Q1:Please make sure you have the correct access rights and the repository exists.</h2><p><code>hexo b</code>,然后问题如愿以偿的冒出来了。<br>你去百度了下,发现是ssh密钥配置错了,然后一直无脑循环,是不是?<br>对,我就是这样,卸载git,然后又尝试重装termux,耗时9d.<br>最后发现我可以d的上去啊,没问题啊,恭喜你,终于跨过了第一个坑.</p>
 <h2 id="Q2-就这-然后呢"><a href="#Q2-就这-然后呢" class="headerlink" title="Q2:就这?然后呢?"></a>Q2:就这?然后呢?</h2><p>然后你去了issues,发现有人踩过坑了:<br><a target="_blank" rel="noopener" href="https://github.com/coneycode/hexo-git-backup/issues/41">https://github.com/coneycode/hexo-git-backup/issues/41</a><br>但是,放弃了?别急,慢慢听我说。</p>
 <h2 id="Q3"><a href="#Q3" class="headerlink" title="Q3:"></a>Q3:</h2><p>找了很久,你终于找到一个大佬写的:<br><a target="_blank" rel="noopener" href="https://github.com/coneycode/hexo-git-backup/issues/40">https://github.com/coneycode/hexo-git-backup/issues/40</a><br>但是你按着来:<br><code>vi node_modules/hexo-git-backup/git.js</code></p>
 <p>行135(改为)<code>commands.push（[&#39;push&#39;，&#39;-u &#39;，t，&#39;backup：&#39;+ repo [t] .branch，&#39;--force&#39;]）;</code></p>
 <p><code>vi config.yml</code></p>
-<p>github更改为origin<br>当你<code>hexo b</code>时,发现<code>error: src refspec backup does not match any error: failed to push some refs to &#39;git@github.com:...&#39;</code></p>
-<h1 id="那么-接下来按我说的做"><a href="#那么-接下来按我说的做" class="headerlink" title="那么,接下来按我说的做:"></a>那么,接下来按我说的做:</h1><p>1,恢复node_modules&#x2F;hexo-git-backup&#x2F;git.js文件</p>
-<p>2,<code>vi config.yml</code><br>  github更改为origin(同上,已修改跳过2)</p>
+<p>github更改为origin<br>当你<code>hexo b</code>时,发现<code>error: src refspec backup does not match any
+error: failed to push some refs to &#39;git@github.com:...&#39;</code></p>
+<h1 id="那么-接下来按我说的做"><a href="#那么-接下来按我说的做" class="headerlink" title="那么,接下来按我说的做:"></a>那么,接下来按我说的做:</h1><p>1,恢复node_modules/hexo-git-backup/git.js文件</p>
+<p>2,<code>vi config.yml</code><br>  github更改为origin(同上,已修改跳过2)</p>
 <p>3,执行<code>git push</code></p>
 <p>4,就可以愉快的备份了<br>(另外,可能我的有点点特殊,备份库和托管库不在一块,这里仅供参考)</p>
 <p>2020.10.0补充:仅需要<code>git remote rm origin &amp;&amp; git remote add origin 你的仓库地址</code>绑定你的备份仓库即可，原因可能为git push识别控制文件设置的库和本地绑定的远程库不同，所以报错。</p>
@@ -405,7 +399,7 @@
                 标签
             </span>
             <span class="count">
-                51
+                52
             </span>
         </a>
     </div>
@@ -423,7 +417,7 @@
   <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
     <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
       <div class="tag-clouds">
-        <a href="/tags/Android/" style="font-size: 0.7em;">Android</a> <a href="/tags/Android-low-aarch64/" style="font-size: 0.6em;">Android(low,aarch64)</a> <a href="/tags/CS/" style="font-size: 0.6em;">CS</a> <a href="/tags/CS1061/" style="font-size: 0.6em;">CS1061</a> <a href="/tags/CSPROJ/" style="font-size: 0.6em;">CSPROJ</a> <a href="/tags/Centos8-Stream/" style="font-size: 0.6em;">Centos8(Stream)</a> <a href="/tags/DLL/" style="font-size: 0.6em;">DLL</a> <a href="/tags/Hamlet/" style="font-size: 0.6em;">Hamlet</a> <a href="/tags/Hexo/" style="font-size: 0.7em;">Hexo</a> <a href="/tags/ILSpy/" style="font-size: 0.6em;">ILSpy</a> <a href="/tags/Linux/" style="font-size: 0.8em;">Linux</a> <a href="/tags/Minecraft/" style="font-size: 0.6em;">Minecraft</a> <a href="/tags/Oracle-Java/" style="font-size: 0.6em;">Oracle Java</a> <a href="/tags/PC/" style="font-size: 0.6em;">PC</a> <a href="/tags/Reflexil/" style="font-size: 0.6em;">Reflexil</a> <a href="/tags/Root/" style="font-size: 0.6em;">Root</a> <a href="/tags/Terminal/" style="font-size: 0.6em;">Terminal</a> <a href="/tags/Termux/" style="font-size: 0.8em;">Termux</a>
+        <a href="/tags/Android/" style="font-size: 0.7em;">Android</a> <a href="/tags/Android-low-aarch64/" style="font-size: 0.6em;">Android(low,aarch64)</a> <a href="/tags/CS/" style="font-size: 0.6em;">CS</a> <a href="/tags/CS1061/" style="font-size: 0.6em;">CS1061</a> <a href="/tags/CSPROJ/" style="font-size: 0.6em;">CSPROJ</a> <a href="/tags/Centos8-Stream/" style="font-size: 0.6em;">Centos8(Stream)</a> <a href="/tags/DLL/" style="font-size: 0.6em;">DLL</a> <a href="/tags/Hamlet/" style="font-size: 0.6em;">Hamlet</a> <a href="/tags/Hexo/" style="font-size: 0.7em;">Hexo</a> <a href="/tags/ILSpy/" style="font-size: 0.6em;">ILSpy</a> <a href="/tags/Linux/" style="font-size: 0.8em;">Linux</a> <a href="/tags/Minecraft/" style="font-size: 0.6em;">Minecraft</a> <a href="/tags/Oracle-Java/" style="font-size: 0.6em;">Oracle Java</a> <a href="/tags/PC/" style="font-size: 0.6em;">PC</a> <a href="/tags/Private/" style="font-size: 0.6em;">Private</a> <a href="/tags/Reflexil/" style="font-size: 0.6em;">Reflexil</a> <a href="/tags/Root/" style="font-size: 0.6em;">Root</a> <a href="/tags/Terminal/" style="font-size: 0.6em;">Terminal</a>
       </div>
   </aside>
 
@@ -603,9 +597,6 @@
 <script defer src="https://unpkg.com/clipboard@2.0.6/dist/clipboard.min.js"></script>
 <script defer src="/js/kratosr.min.js"></script>
 <script defer src="/js/pjax.min.js"></script>
-
-
-    <script defer src="/js/kr-dark.min.js"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics --> <script async src="https://www.googletagmanager.com/gtag/js?id=UA-177307259-1"></script> <script> window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag("js", new Date()); gtag("config", "UA-177307259-1"); </script> 
 

@@ -42,6 +42,10 @@
   <!-- 样式表文件 -->
   <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" type="text/css" media="all">
   
+    <link rel="stylesheet" id="darkmode-css" href="/css/kr-color-dark.min.css" type="text/css" media="(prefers-color-scheme: dark)">
+    <script src="/js/kr-dark.min.js"></script>
+  
+  
   
     <link rel="stylesheet" id="prismjs-css" href="/css/prismjs.min.css" type="text/css" media="all">
   
@@ -49,13 +53,11 @@
   <link rel="stylesheet" id="nprogress-css" href="https://unpkg.com/nprogress@0.2.0/nprogress.css" type="text/css" media="all">
   
   
+  
     <link rel="stylesheet" href="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.css">
   
   
     <link rel="stylesheet" href="https://unpkg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
-  
-  
-    <link rel="stylesheet" id="darkmode-css" href="/css/kr-dark.min.css" type="text/css" media="all">
   
   <!-- 不得不预先加载的一些JS文件 -->
   <script src="https://unpkg.com/jquery@3.6.0/dist/jquery.min.js"></script>
@@ -116,15 +118,7 @@
                                                     
                                                 
                                                     
-                                                        <li><a target="_blank" rel="noopener" href="https://github.com/greenhandzdl/greenhandzdl.github.io">仓库地址</a></li>
-                                                    
-                                                
-                                                    
                                                         <li><a href="/logs">更新修复日志</a></li>
-                                                    
-                                                
-                                                    
-                                                        <li><a target="_blank" rel="noopener" href="https://github.com/greenhandzdl/others">杂 项目地址</a></li>
                                                     
                                                 
                                                     
@@ -201,6 +195,7 @@
 
 
 
+
     
     
         <article>
@@ -244,7 +239,7 @@
                 <hr />
                 <div class="kratos-post-content">
                     <p><img src="https://api.ixiaowai.cn/api/api.php" alt="cover"></p>
-<h1 id="什么是SElinux？"><a href="#什么是SElinux？" class="headerlink" title="什么是SElinux？"></a>什么是SElinux？</h1><p>安全增强式Linux（SELinux，Security-Enhanced Linux）是一个Linux内核的安全模块，其提供了访问控制安全策略机制，包括了强制访问控制（Mandatory Access Control，MAC）。<br>SELinux是一组内核修改和用户空间工具，已经被添加到各种Linux发行版中。其软件架构力图将安全决策的执行与安全策略分离，并简化涉及执行安全策略的软件的数量。SELinux的核心概念可以追溯回美国国家安全局（NSA）的一些早期项目。</p>
+<h1 id="什么是SElinux？"><a href="#什么是SElinux？" class="headerlink" title="什么是SElinux？"></a>什么是SElinux？</h1><p>安全增强式Linux（SELinux，Security-Enhanced Linux）是一个Linux内核的安全模块，其提供了访问控制安全策略机制，包括了强制访问控制（Mandatory Access Control，MAC）。<br>SELinux是一组内核修改和用户空间工具，已经被添加到各种Linux发行版中。其软件架构力图将安全决策的执行与安全策略分离，并简化涉及执行安全策略的软件的数量。SELinux的核心概念可以追溯回美国国家安全局（NSA）的一些早期项目。<br></p>
                 </div>
                 <footer class="kratos-entry-footer clearfix">
                     <div class="post-like-donate text-center clearfix">
@@ -301,7 +296,7 @@
 <h1 id="认识工具"><a href="#认识工具" class="headerlink" title="认识工具"></a>认识工具</h1><h2 id="什么是termux"><a href="#什么是termux" class="headerlink" title="什么是termux"></a>什么是termux</h2><p>Termux是一个Android终端仿真器和Linux环境应用程序，直接工作，无需根目录或设置。一个最小的基本系统被自动安装-额外的软件包可以使用APT软件包管理器来使用。不需要root，运行于内部存储（不在SD卡上)。</p>
 <h2 id="为什么用termux"><a href="#为什么用termux" class="headerlink" title="为什么用termux"></a>为什么用termux</h2><p>个人习惯，aid-learning可能适用</p>
 <h2 id="什么是hexo"><a href="#什么是hexo" class="headerlink" title="什么是hexo"></a>什么是hexo</h2><p>hexo是静态博客系统</p>
-<h2 id="为什么用hexo而不是用其他的"><a href="#为什么用hexo而不是用其他的" class="headerlink" title="为什么用hexo而不是用其他的"></a>为什么用hexo而不是用其他的</h2><p>Apache加MySQL部署在termux上面会出现domin之类的(一言难尽)，而hugo和Ruby的jekyII难度系数偏大,有点耗时间,所以也排除。</p>
+<h2 id="为什么用hexo而不是用其他的"><a href="#为什么用hexo而不是用其他的" class="headerlink" title="为什么用hexo而不是用其他的"></a>为什么用hexo而不是用其他的</h2><p>Apache加MySQL部署在termux上面会出现domin之类的(一言难尽)，而hugo和Ruby的jekyII难度系数偏大,有点耗时间,所以也排除。<br></p>
                 </div>
                 <footer class="kratos-entry-footer clearfix">
                     <div class="post-like-donate text-center clearfix">
@@ -354,8 +349,8 @@
                 </header>
                 <hr />
                 <div class="kratos-post-content">
-                    <p><img src="https://api.btstu.cn/sjbz/api.php?lx=dongman&format=images" alt="cover"></p>
-<h1 id="Wine是什么"><a href="#Wine是什么" class="headerlink" title="Wine是什么"></a>Wine是什么</h1><p>Wine(WineIsNotanEmulator)[即Wine不是一个模拟器]是一个在Linux和UNIX之上的,Windows3.x和WindowsAPIs的实现。注意，Wine不是Windows模拟器，而是运用API转换技术实做出Linux对应到Windows相对应的函数来调用DLL以运行Windows程序。Wine可以工作在绝大多数的UNIX版本下,包括Linux,FreeBSD,和Solaris。另外，也有适用于MacOSX的Wine程序。Wine不需要MicrosoftWindows,因为这是一个完全由百分之百的免费代码组成的。如果有可利用的副本的话，它也可以随意地使用本地系统的DLLs。Wine的发布是完全公开源代码的，并且是免费发行的。（基于LGPL发布：GNU宽通用公共许可证）<br>Wine虽然可运行大部份视窗程序，但只能有限度地运行以DirectX所编写的游戏，亦即是很多游戏不能在其运行。<br>Wine的延伸计划主要有两大产品，一个是CodeWeavers开发的CrossOver，另一个是TransGamingTechnologies的Cedega。<br>CrossOverOffice以提供应用软件支持为主，Cedega则锁定在游戏娱乐方面。CodeWeavers和Wine计划一直保有密切的合作关系。CodeWeavers亦雇用了AlexandreJuillard以将CrossOverOffice的源代码回馈给Wine。在2005年6月22日，CodeWeavers宣布支持基于英特尔处理器的苹果电脑。<br>Transgaming的Cedega则是商业软件，以Wine为基础，在Wine更换授权后停止使用Wine的源代码，虽然有Cedega提供源代码下载（经由CVS），但在不包含专利技术的情形下，功能与可用性都不高。</p>
+                    <p><img src="https://api.btstu.cn/sjbz/api.php?lx=dongman&amp;format=images" alt="cover"></p>
+<h1 id="Wine是什么"><a href="#Wine是什么" class="headerlink" title="Wine是什么"></a>Wine是什么</h1><p>Wine(WineIsNotanEmulator)[即Wine不是一个模拟器]是一个在Linux和UNIX之上的,Windows3.x和WindowsAPIs的实现。注意，Wine不是Windows模拟器，而是运用API转换技术实做出Linux对应到Windows相对应的函数来调用DLL以运行Windows程序。Wine可以工作在绝大多数的UNIX版本下,包括Linux,FreeBSD,和Solaris。另外，也有适用于MacOSX的Wine程序。Wine不需要MicrosoftWindows,因为这是一个完全由百分之百的免费代码组成的。如果有可利用的副本的话，它也可以随意地使用本地系统的DLLs。Wine的发布是完全公开源代码的，并且是免费发行的。（基于LGPL发布：GNU宽通用公共许可证）<br>Wine虽然可运行大部份视窗程序，但只能有限度地运行以DirectX所编写的游戏，亦即是很多游戏不能在其运行。<br>Wine的延伸计划主要有两大产品，一个是CodeWeavers开发的CrossOver，另一个是TransGamingTechnologies的Cedega。<br>CrossOverOffice以提供应用软件支持为主，Cedega则锁定在游戏娱乐方面。CodeWeavers和Wine计划一直保有密切的合作关系。CodeWeavers亦雇用了AlexandreJuillard以将CrossOverOffice的源代码回馈给Wine。在2005年6月22日，CodeWeavers宣布支持基于英特尔处理器的苹果电脑。<br>Transgaming的Cedega则是商业软件，以Wine为基础，在Wine更换授权后停止使用Wine的源代码，虽然有Cedega提供源代码下载（经由CVS），但在不包含专利技术的情形下，功能与可用性都不高。<br></p>
                 </div>
                 <footer class="kratos-entry-footer clearfix">
                     <div class="post-like-donate text-center clearfix">
@@ -424,7 +419,7 @@
                 标签
             </span>
             <span class="count">
-                51
+                52
             </span>
         </a>
     </div>
@@ -442,7 +437,7 @@
   <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
     <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
       <div class="tag-clouds">
-        <a href="/tags/Android/" style="font-size: 0.7em;">Android</a> <a href="/tags/Android-low-aarch64/" style="font-size: 0.6em;">Android(low,aarch64)</a> <a href="/tags/CS/" style="font-size: 0.6em;">CS</a> <a href="/tags/CS1061/" style="font-size: 0.6em;">CS1061</a> <a href="/tags/CSPROJ/" style="font-size: 0.6em;">CSPROJ</a> <a href="/tags/Centos8-Stream/" style="font-size: 0.6em;">Centos8(Stream)</a> <a href="/tags/DLL/" style="font-size: 0.6em;">DLL</a> <a href="/tags/Hamlet/" style="font-size: 0.6em;">Hamlet</a> <a href="/tags/Hexo/" style="font-size: 0.7em;">Hexo</a> <a href="/tags/ILSpy/" style="font-size: 0.6em;">ILSpy</a> <a href="/tags/Linux/" style="font-size: 0.8em;">Linux</a> <a href="/tags/Minecraft/" style="font-size: 0.6em;">Minecraft</a> <a href="/tags/Oracle-Java/" style="font-size: 0.6em;">Oracle Java</a> <a href="/tags/PC/" style="font-size: 0.6em;">PC</a> <a href="/tags/Reflexil/" style="font-size: 0.6em;">Reflexil</a> <a href="/tags/Root/" style="font-size: 0.6em;">Root</a> <a href="/tags/Terminal/" style="font-size: 0.6em;">Terminal</a> <a href="/tags/Termux/" style="font-size: 0.8em;">Termux</a>
+        <a href="/tags/Android/" style="font-size: 0.7em;">Android</a> <a href="/tags/Android-low-aarch64/" style="font-size: 0.6em;">Android(low,aarch64)</a> <a href="/tags/CS/" style="font-size: 0.6em;">CS</a> <a href="/tags/CS1061/" style="font-size: 0.6em;">CS1061</a> <a href="/tags/CSPROJ/" style="font-size: 0.6em;">CSPROJ</a> <a href="/tags/Centos8-Stream/" style="font-size: 0.6em;">Centos8(Stream)</a> <a href="/tags/DLL/" style="font-size: 0.6em;">DLL</a> <a href="/tags/Hamlet/" style="font-size: 0.6em;">Hamlet</a> <a href="/tags/Hexo/" style="font-size: 0.7em;">Hexo</a> <a href="/tags/ILSpy/" style="font-size: 0.6em;">ILSpy</a> <a href="/tags/Linux/" style="font-size: 0.8em;">Linux</a> <a href="/tags/Minecraft/" style="font-size: 0.6em;">Minecraft</a> <a href="/tags/Oracle-Java/" style="font-size: 0.6em;">Oracle Java</a> <a href="/tags/PC/" style="font-size: 0.6em;">PC</a> <a href="/tags/Private/" style="font-size: 0.6em;">Private</a> <a href="/tags/Reflexil/" style="font-size: 0.6em;">Reflexil</a> <a href="/tags/Root/" style="font-size: 0.6em;">Root</a> <a href="/tags/Terminal/" style="font-size: 0.6em;">Terminal</a>
       </div>
   </aside>
 
@@ -622,9 +617,6 @@
 <script defer src="https://unpkg.com/clipboard@2.0.6/dist/clipboard.min.js"></script>
 <script defer src="/js/kratosr.min.js"></script>
 <script defer src="/js/pjax.min.js"></script>
-
-
-    <script defer src="/js/kr-dark.min.js"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics --> <script async src="https://www.googletagmanager.com/gtag/js?id=UA-177307259-1"></script> <script> window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag("js", new Date()); gtag("config", "UA-177307259-1"); </script> 
 

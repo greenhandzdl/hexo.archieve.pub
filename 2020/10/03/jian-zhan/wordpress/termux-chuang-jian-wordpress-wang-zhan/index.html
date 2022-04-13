@@ -48,6 +48,10 @@
   <!-- 样式表文件 -->
   <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" type="text/css" media="all">
   
+    <link rel="stylesheet" id="darkmode-css" href="/css/kr-color-dark.min.css" type="text/css" media="(prefers-color-scheme: dark)">
+    <script src="/js/kr-dark.min.js"></script>
+  
+  
   
     <link rel="stylesheet" id="prismjs-css" href="/css/prismjs.min.css" type="text/css" media="all">
   
@@ -55,13 +59,11 @@
   <link rel="stylesheet" id="nprogress-css" href="https://unpkg.com/nprogress@0.2.0/nprogress.css" type="text/css" media="all">
   
   
+  
     <link rel="stylesheet" href="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.css">
   
   
     <link rel="stylesheet" href="https://unpkg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
-  
-  
-    <link rel="stylesheet" id="darkmode-css" href="/css/kr-dark.min.css" type="text/css" media="all">
   
   <!-- 不得不预先加载的一些JS文件 -->
   <script src="https://unpkg.com/jquery@3.6.0/dist/jquery.min.js"></script>
@@ -125,15 +127,7 @@
                                                     
                                                 
                                                     
-                                                        <li><a target="_blank" rel="noopener" href="https://github.com/greenhandzdl/greenhandzdl.github.io">仓库地址</a></li>
-                                                    
-                                                
-                                                    
                                                         <li><a href="/logs">更新修复日志</a></li>
-                                                    
-                                                
-                                                    
-                                                        <li><a target="_blank" rel="noopener" href="https://github.com/greenhandzdl/others">杂 项目地址</a></li>
                                                     
                                                 
                                                     
@@ -188,6 +182,7 @@
         
 
             <article>
+    
     <div class="kratos-hentry kratos-post-inner clearfix">
         <header class="kratos-entry-header">
             
@@ -201,7 +196,7 @@
                     <i class="fa fa-edit"></i> 
                     
                     
-                        ~1.77K
+                        ~1.76K
                     
                     字
                 </li>
@@ -215,10 +210,8 @@
             </div>
             
             <hr />
-            <p><img src="https://acg.yanwz.cn/wallpaper/api.php" alt="cover"><br>我说我不仅会建静态，动态我也会建，你们信吗？</p>
-<span id="more"></span>
-
-    <div id="aplayer-NmSOyNgH" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="531786301" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#555"></div>
+            <p><img src="https://acg.yanwz.cn/wallpaper/api.php" alt="cover"><br>我说我不仅会建静态，动态我也会建，你们信吗？<br><span id="more"></span><br>
+    <div id="aplayer-YjDgBtag" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="531786301" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#555"></div></p>
 <h1 id="工具-google-com-github-com"><a href="#工具-google-com-github-com" class="headerlink" title="工具: google.com github.com"></a>工具: google.com github.com</h1><p>（没错，我就是嘲笑你们不会使用工具，想打我吧，你们就想吧）</p>
 <h2 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a>nginx</h2><p><code>pkg install nginx</code></p>
 <h3 id="修改nginx配置文件"><a href="#修改nginx配置文件" class="headerlink" title="修改nginx配置文件"></a>修改nginx配置文件</h3><p>完成上步，你访问127.0.0.1:8080仅仅会得到默认页。<br>如果你想php解析，如果你想更换网站根目录，请往下看。<br><code>vim $PREFIX/etc/nginx/nginx.conf</code></p>
@@ -226,11 +219,8 @@
 <h4 id="取消-location-php-这些注释（监听php）"><a href="#取消-location-php-这些注释（监听php）" class="headerlink" title="取消 location ~ .php$ 这些注释（监听php）"></a>取消 location ~ .php$ 这些注释（监听php）</h4><p>65~71行，退掉前面的#符</p>
 <h4 id="换网站根目录地址"><a href="#换网站根目录地址" class="headerlink" title="换网站根目录地址"></a>换网站根目录地址</h4><p>默认地址在<code>/data/data/com.termux/files/usr/share/nginx/html</code>，所以更换也只需要替换文件所有出现这个的就可以了，当然这里还有个坑。<br>在69行位置,需要改成<code>fastcgi_param  SCRIPT_FILENAME  你修改后网站目录地址$fastcgi_script_name;</code></p>
 <h2 id="php-fpm"><a href="#php-fpm" class="headerlink" title="php-fpm"></a>php-fpm</h2><p>由于nginx无法直接解析，所以需要<code>pkg install php-fpm</code><br>不仅如此，还需要<code>vim $PREFIX/etc/php-fpm.d/www.conf</code><br>将36行<code>listen = /data/data/com.termux/files/usr/var/run/php-fpm.sock</code>替换成<code>listen = 127.0.0.1:9000</code></p>
-<h2 id="mariadb"><a href="#mariadb" class="headerlink" title="mariadb"></a>mariadb</h2><p>装数据库中…<code>pkg install mariadb</code></p>
-<pre class="language-none"><code class="language-none"># 登录 termux用户 数据库
-mysql -u $(whoami)</code></pre>
-<p>如果出现<code>ERROR 2002 (HY000): Can&#39;t connect to local MySQL server through socket &#39;/data/data/com.termux/files/usr/tmp/mysqld.sock&#39; (111)</code>类似错误，请执行<code>mysqld_safe</code>，然后通过侧边栏的new session再开一个终端，重试<code>mysql -u $(whoami)</code><br>如果还是不行，你还是谷歌吧。</p>
-<pre class="language-none"><code class="language-none"># 修改 root 密码的 SQL语句
+<h2 id="mariadb"><a href="#mariadb" class="headerlink" title="mariadb"></a>mariadb</h2><p>装数据库中…<code>pkg install mariadb</code><br><pre class="language-none"><code class="language-none"># 登录 termux用户 数据库
+mysql -u $(whoami)</code></pre><br>如果出现<code>ERROR 2002 (HY000): Can&#39;t connect to local MySQL server through socket &#39;/data/data/com.termux/files/usr/tmp/mysqld.sock&#39; (111)</code>类似错误，请执行<code>mysqld_safe</code>，然后通过侧边栏的new session再开一个终端，重试<code>mysql -u $(whoami)</code><br>如果还是不行，你还是谷歌吧。<br><pre class="language-none"><code class="language-none"># 修改 root 密码的 SQL语句
 use mysql;
 set password for &#39;root&#39;@&#39;localhost&#39; &#x3D; password(&#39;你设置的密码&#39;);
 # 刷新权限 并退出
@@ -247,15 +237,15 @@ use wordpress;
 # 设置中文编码
 set names utf8; 
 # 然后跟你的数据库say bye
-quit;</code></pre>
+quit;</code></pre></p>
 <h2 id="wordpress"><a href="#wordpress" class="headerlink" title="wordpress"></a>wordpress</h2><pre class="language-none"><code class="language-none">wget https:&#x2F;&#x2F;wordpress.org&#x2F;latest.zip
 unzip latest.zip
 cp wordpress&#x2F;. -r 你的网站目录地址</code></pre>
 <h2 id="欣赏你的作品"><a href="#欣赏你的作品" class="headerlink" title="欣赏你的作品"></a>欣赏你的作品</h2><p><code>nginx</code><br>如果开启了，你就<code>nginx -s reload</code>就行了。</p>
 <p><code>php-fpm</code></p>
 <p>如果提示注意不是root运行，忽略即可。<br>如果提醒端口占有，请关闭termux重开。如果是其他原因，如自开服务等，建议自行关闭，要查询什么程序占用，请执行<code>nmap 127.0.0.1</code></p>
-<p><code>mysqld_safe</code><br>不要重复执行命令！！！<br>访问127.0.0.1:8080，完成最后的过程–配置帐号密码啥的。</p>
-<h2 id="最后，看看我的成果。"><a href="#最后，看看我的成果。" class="headerlink" title="最后，看看我的成果。"></a>最后，看看我的成果。</h2><p><img src="/2020/10/03/jian-zhan/wordpress/termux-chuang-jian-wordpress-wang-zhan/%E7%A4%BA%E4%BE%8B%E5%9B%BE.png" alt="我的成果"><br>如果还是没有看太明白，请在本文链接后面加上文件名字（配置文件），你将有概率得到作者的配置文件–注意：作者的网站根目录在~&#x2F;www。</p>
+<p><code>mysqld_safe</code><br>不要重复执行命令！！！<br>访问127.0.0.1:8080，完成最后的过程—配置帐号密码啥的。</p>
+<h2 id="最后，看看我的成果。"><a href="#最后，看看我的成果。" class="headerlink" title="最后，看看我的成果。"></a>最后，看看我的成果。</h2><p><img src="/2020/10/03/jian-zhan/wordpress/termux-chuang-jian-wordpress-wang-zhan/示例图.png" alt="我的成果"><br>如果还是没有看太明白，请在本文链接后面加上文件名字（配置文件），你将有概率得到作者的配置文件—注意：作者的网站根目录在~/www。</p>
 <p>我相信其他动态网页部署也差不多吧，如果还想搞外网，映射8080端口或者你改的端口就可以了。</p>
 
         </div>
@@ -433,7 +423,7 @@ cp wordpress&#x2F;. -r 你的网站目录地址</code></pre>
                 标签
             </span>
             <span class="count">
-                51
+                52
             </span>
         </a>
     </div>
@@ -451,7 +441,7 @@ cp wordpress&#x2F;. -r 你的网站目录地址</code></pre>
   <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
     <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
       <div class="tag-clouds">
-        <a href="/tags/Android/" style="font-size: 0.7em;">Android</a> <a href="/tags/Android-low-aarch64/" style="font-size: 0.6em;">Android(low,aarch64)</a> <a href="/tags/CS/" style="font-size: 0.6em;">CS</a> <a href="/tags/CS1061/" style="font-size: 0.6em;">CS1061</a> <a href="/tags/CSPROJ/" style="font-size: 0.6em;">CSPROJ</a> <a href="/tags/Centos8-Stream/" style="font-size: 0.6em;">Centos8(Stream)</a> <a href="/tags/DLL/" style="font-size: 0.6em;">DLL</a> <a href="/tags/Hamlet/" style="font-size: 0.6em;">Hamlet</a> <a href="/tags/Hexo/" style="font-size: 0.7em;">Hexo</a> <a href="/tags/ILSpy/" style="font-size: 0.6em;">ILSpy</a> <a href="/tags/Linux/" style="font-size: 0.8em;">Linux</a> <a href="/tags/Minecraft/" style="font-size: 0.6em;">Minecraft</a> <a href="/tags/Oracle-Java/" style="font-size: 0.6em;">Oracle Java</a> <a href="/tags/PC/" style="font-size: 0.6em;">PC</a> <a href="/tags/Reflexil/" style="font-size: 0.6em;">Reflexil</a> <a href="/tags/Root/" style="font-size: 0.6em;">Root</a> <a href="/tags/Terminal/" style="font-size: 0.6em;">Terminal</a> <a href="/tags/Termux/" style="font-size: 0.8em;">Termux</a>
+        <a href="/tags/Android/" style="font-size: 0.7em;">Android</a> <a href="/tags/Android-low-aarch64/" style="font-size: 0.6em;">Android(low,aarch64)</a> <a href="/tags/CS/" style="font-size: 0.6em;">CS</a> <a href="/tags/CS1061/" style="font-size: 0.6em;">CS1061</a> <a href="/tags/CSPROJ/" style="font-size: 0.6em;">CSPROJ</a> <a href="/tags/Centos8-Stream/" style="font-size: 0.6em;">Centos8(Stream)</a> <a href="/tags/DLL/" style="font-size: 0.6em;">DLL</a> <a href="/tags/Hamlet/" style="font-size: 0.6em;">Hamlet</a> <a href="/tags/Hexo/" style="font-size: 0.7em;">Hexo</a> <a href="/tags/ILSpy/" style="font-size: 0.6em;">ILSpy</a> <a href="/tags/Linux/" style="font-size: 0.8em;">Linux</a> <a href="/tags/Minecraft/" style="font-size: 0.6em;">Minecraft</a> <a href="/tags/Oracle-Java/" style="font-size: 0.6em;">Oracle Java</a> <a href="/tags/PC/" style="font-size: 0.6em;">PC</a> <a href="/tags/Private/" style="font-size: 0.6em;">Private</a> <a href="/tags/Reflexil/" style="font-size: 0.6em;">Reflexil</a> <a href="/tags/Root/" style="font-size: 0.6em;">Root</a> <a href="/tags/Terminal/" style="font-size: 0.6em;">Terminal</a>
       </div>
   </aside>
 
@@ -631,9 +621,6 @@ cp wordpress&#x2F;. -r 你的网站目录地址</code></pre>
 <script defer src="https://unpkg.com/clipboard@2.0.6/dist/clipboard.min.js"></script>
 <script defer src="/js/kratosr.min.js"></script>
 <script defer src="/js/pjax.min.js"></script>
-
-
-    <script defer src="/js/kr-dark.min.js"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics --> <script async src="https://www.googletagmanager.com/gtag/js?id=UA-177307259-1"></script> <script> window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag("js", new Date()); gtag("config", "UA-177307259-1"); </script> 
 
